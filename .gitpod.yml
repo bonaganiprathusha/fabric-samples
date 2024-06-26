@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: ./scripts/bootstrap.sh
+    command: ./network.sh up createChannel -c mychannel -ca
+
+ports:
+  - port: 7050
+    onOpen: open-preview
+  - port: 7051
+    onOpen: open-preview
+  - port: 7052
+    onOpen: open-preview
+  - port: 7053
+    onOpen: open-preview
+  - port: 5984
+    onOpen: open-preview
+  - port: 8080
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - golang.Go
+    - esbenp.prettier-vscode
+    - dbaeumer.vscode-eslint
